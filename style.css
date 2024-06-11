@@ -14,74 +14,69 @@ body {
     align-items: center;
     height: 100vh;
     color: #fff;
-    overflow: hidden;  /* Prevent scrolling */
 }
 
 .card {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
-    padding: 30px;
+    padding: 45px;
     text-align: center;
-    width: 90%;
+    width: 92%;
     max-width: 500px;
-    height: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: none;
 }
 
 .search {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
-    position: relative;
+    margin-bottom: 20px;
+    padding: 0;
 }
 
-.search input {
+.input-container {
+    position: relative;
     flex: 1;
-    padding: 10px 10px 10px 40px; /* Adjusted for icon space */
-    border-radius: 32px;
+    margin-right: 10px;
+}
+
+.input-container input {
+    width: 100%;
+    border-radius: 52px;
     border: none;
     outline: none;
-    margin-right: 10px;
+    padding: 10px 15px 10px 40px;
     font-size: 16px;
     color: #000;
-    transition: box-shadow 0.3s ease;
 }
 
-.search input:focus {
-    box-shadow: 0 0 5px rgba(255, 196, 107, 0.7);
+.input-container .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
 }
 
 .search button {
     background: #ffc46b;
     border: none;
     border-radius: 50%;
+    height: 35px;
     padding: 10px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .search button:hover {
-    background: #ff4757;
+    background: #ff9d09;
     transform: scale(1.1);
 }
 
 .search button img {
-    width: 22px;
+    width: 23px;
     height: 20px;
-}
-
-.search input::placeholder {
-    color: #aaa;
-}
-
-.search input::before {
-    content: url('images/search.png');
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
 }
 
 .weather {
@@ -90,7 +85,7 @@ body {
 }
 
 .weather-icon {
-    width: 80px;
+    width: 100px;
     margin: 10px 0;
 }
 
@@ -127,14 +122,15 @@ body {
     font-weight: 400;
 }
 
+.label {
+    font-size: 14px;
+}
+
 .humidity-section img, .wind-section img {
     width: 30px;
-    margin-right: 10px;
-    margin-bottom: 0;
+    margin-right: 25px;
 }
-.wind p{
-    font-size: 12px;
-}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -148,7 +144,6 @@ body {
 
 /* Media Queries for Responsiveness */
 
-/* Small Devices (Phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .temp {
         font-size: 36px;
@@ -164,13 +159,13 @@ body {
 
     .search input {
         font-size: 14px;
-        padding: 4px;
     }
 
     .search button {
         padding: 4px;
     }
 }
+
 @media only screen and (min-width: 601px) and (max-width: 768px) {
     .temp {
         font-size: 40px;
@@ -186,7 +181,6 @@ body {
 
     .search input {
         font-size: 15px;
-        padding: 9px;
     }
 
     .search button {
@@ -194,7 +188,6 @@ body {
     }
 }
 
-/* Large Devices (Desktops, 769px and up) */
 @media only screen and (min-width: 769px) {
     .temp {
         font-size: 48px;
@@ -210,7 +203,6 @@ body {
 
     .search input {
         font-size: 16px;
-        padding: 10px;
     }
 
     .search button {
