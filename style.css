@@ -25,23 +25,31 @@ body {
     width: 90%;
     max-width: 500px;
     height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: none;
 }
 
 .search {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 .search input {
     flex: 1;
-    padding: 10px;
+    padding: 10px 10px 10px 40px; /* Adjusted for icon space */
     border-radius: 32px;
     border: none;
     outline: none;
     margin-right: 10px;
     font-size: 16px;
-    color: #333;
+    color: #000;
+    transition: box-shadow 0.3s ease;
+}
+
+.search input:focus {
+    box-shadow: 0 0 5px rgba(255, 196, 107, 0.7);
 }
 
 .search button {
@@ -50,16 +58,30 @@ body {
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .search button:hover {
     background: #ff4757;
+    transform: scale(1.1);
 }
 
 .search button img {
     width: 22px;
     height: 20px;
+}
+
+.search input::placeholder {
+    color: #aaa;
+}
+
+.search input::before {
+    content: url('images/search.png');
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .weather {
@@ -69,7 +91,7 @@ body {
 
 .weather-icon {
     width: 80px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .temp {
@@ -110,7 +132,9 @@ body {
     margin-right: 10px;
     margin-bottom: 0;
 }
-
+.wind p{
+    font-size: 12px;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
